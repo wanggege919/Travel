@@ -1,5 +1,5 @@
 <template>
-    <div class="header">
+    <div class="header" >
         城市选择
         <router-link to='/'>
             <div class="header-left">
@@ -20,8 +20,8 @@ export default {
 @import '../../../assets/styles/varibles.styl'
     .header
         position relative
-        height .86rem
-        line-height .86rem
+        height .8rem
+        line-height .8rem
         text-align center
         background $bgColor
         color #fff
@@ -33,5 +33,5 @@ export default {
            width .86rem
            .left-icon
                font-size .5rem
-               color #fff
+               color #fff      
 </style>
