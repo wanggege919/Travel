@@ -8,10 +8,10 @@
           :key="item.id"
         >
           <div class='icon-img'>
-            <img class='icon-img-content' :src='item.iconUrl' />
+            <img class='icon-img-content' :src='item.imgUrl' />
           </div>
-          <p class="icon-description">{{item.discription}}</p>
-          
+          <p class="icon-description">{{item.desc}}</p>
+                    
         </div>
         <!-- <div class="swiper-pagination" slot="pagination"></div> -->
       </swiper-slide>
@@ -21,6 +21,9 @@
 <script>
 export default {
   name: "HomeIcons",
+  props: {
+    iconList: Array
+  },
   data(){
       return {
           swiperOption: {
@@ -28,59 +31,6 @@ export default {
               autoplay: false
 
           },
-          iconList: [
-              {
-                  id:'0001',
-                  iconUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-                  discription: '景点门票'
-              },
-              {
-                  id:'0002',
-                  iconUrl: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-                  discription: '一日游'
-              },
-              {
-                  id:'0003',
-                  iconUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-                  discription: '郑州必游'
-              },
-              {
-                  id:'0004',
-                  iconUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/8246f27355943202.png',
-                  discription: '郑州方特'
-              },
-              {
-                  id:'0005',
-                  iconUrl: 'http://img1.qunarzz.com/piao/fusion/1803/bd/9f7b9b2b60c1502.png',
-                  discription: '踏青赏花'
-              },
-              {
-                  id:'0006',
-                  iconUrl: 'http://img1.qunarzz.com/piao/fusion/1803/ab/6f7d6e44963c9302.png',
-                  discription: '泡温泉'
-              },
-              {
-                  id:'0007',
-                  iconUrl: 'http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png',
-                  discription: '动植物园'
-              },
-              {
-                  id:'0008',
-                  iconUrl: 'http://img1.qunarzz.com/piao/fusion/1803/50/26ffa31b56646402.png',
-                  discription: '亲子游'
-              },
-              {
-                  id:'0009',
-                  iconUrl: 'http://img1.qunarzz.com/piao/fusion/1803/50/26ffa31b56646402.png',
-                  discription: '海洋馆'
-              },
-              {
-                  id:'00010',
-                  iconUrl: 'http://img1.qunarzz.com/piao/fusion/1803/f5/a963333e1fa802.png',
-                  discription: '当地好玩'
-              },
-
-          ]
       }
   },
   computed:{

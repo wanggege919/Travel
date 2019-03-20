@@ -1,9 +1,9 @@
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOption" >
+    <swiper :options="swiperOption" v-if='showSwiper'>
       <!-- slides -->
-      <swiper-slide v-for='item of swiperList'>
-          <img  class="swiper-img" :src="item.imgUrl" key="item.id">
+      <swiper-slide v-for='item of swiperList' :key = 'item.id'>
+          <img  class="swiper-img" :src="item.imgUrl">
       </swiper-slide>
      
       <!-- Optional controls -->
@@ -14,6 +14,9 @@
 <script>
 export default {
   name: "HomeSwiper",
+  props: {
+      swiperList: Array
+  },
   data(){
       return {
           swiperOption:{
@@ -21,20 +24,11 @@ export default {
               loop: true,
               autoplay: 3000
           },
-          swiperList:[
-              {
-                  id: '0001',
-                  imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/ed5f4115226306e48e6fad106a038afe.jpg_750x200_64df48d6.jpg'
-              },
-              {
-                  id: '0002',
-                  imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/980adfa646fede8d7a4c46feabaac6ee.jpg_750x200_63ecd371.jpg'
-              },
-              {
-                  id: '0003',
-                  imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/2f5f3ea4698c9b7898db7562d89b91ed.jpg_750x200_bd3b4ce9.jpg'
-              }
-          ]
+      }
+  },
+  computed: {
+      showSwiper(){ //解决页面轮播从最后一页开始的bug
+          return this.swiperList.length
       }
   }
 };
@@ -46,7 +40,7 @@ export default {
         overflow hidden
         width 100%
         height  0
-        padding-bottom 26.67%
+        padding-bottom 31.25%
         background #eee
         .swiper-img
             width 100%
