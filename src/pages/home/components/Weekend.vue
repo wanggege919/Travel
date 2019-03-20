@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="title">周末去哪啦</div>
+        <div class="title">周末去哪儿</div>
         <ul >
             <li class="item" v-for='item in weekendList' :key='item.id'>
                 <div class="item-img-wrapper">
@@ -40,7 +40,6 @@ export default {
     .title
         line-height: .8rem
         background #eee
-        margin-top .2rem
         text-indent .2rem
     .item
         // display flex

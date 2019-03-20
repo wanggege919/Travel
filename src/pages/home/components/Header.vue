@@ -1,5 +1,6 @@
 <template>
   <div class="header">
+    
     <div class="header-left">
       <div class="iconfont back-icon">&#xe63b;</div>
     </div>
@@ -7,10 +8,13 @@
       <span class="iconfont">&#xe600;</span>
       输入城市/景点/游玩主题
     </div>
-    <div class="header-right">
-      {{this.city}}
+    <router-link to='/city'>
+       <div class="header-right">
+        {{this.city}}
       <span class="iconfont arrow-icon">&#xe6aa;</span>
     </div>
+    </router-link>
+   
   </div>
 </template>
 
@@ -48,6 +52,7 @@ export default {
       .header-right
         width: 1.24rem
         text-align center
+        color #fff
         .arrow-icon
           margin-left -.1rem
 </style>
